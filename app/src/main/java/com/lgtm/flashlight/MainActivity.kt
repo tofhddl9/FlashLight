@@ -8,9 +8,12 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import android.content.Intent
 import android.net.Uri
+import android.os.Handler
+import android.os.Looper
 import android.provider.Settings
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 
@@ -23,6 +26,12 @@ class MainActivity : AppCompatActivity() {
     private val powerButtonAlphaAnimation: Animation by lazy {
         AnimationUtils.loadAnimation(this, R.anim.anim_alpah_repeat)
     }
+
+    private val exitToast: Toast by lazy {
+        Toast.makeText(this, "뒤로가기 버튼을 한 번 더 누르면 종료됩니다.", Toast.LENGTH_LONG)
+    }
+
+    var isTerminateMessageShown: Boolean = false
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -118,6 +127,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    override fun onBackPressed() {
+        if (!isTerminateMessageShown) {
+            isTerminateMessageShown = true
+            exitToast.show()
+            Handler(Looper.getMainLooper()).postDelayed({ isTerminateMessageShown = false }, 3000)
+        } else {
+            exitToast.cancel()
+            finish()
+        }
     }
 
     companion object {
