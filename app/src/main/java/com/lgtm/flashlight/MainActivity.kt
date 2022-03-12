@@ -45,6 +45,15 @@ class MainActivity : AppCompatActivity() {
         binding.powerButton.setOnClickListener {
             viewModel.onPowerButtonClicked()
         }
+
+        binding.colorPicker.setOnClickListener {
+            moveToColorPicker()
+        }
+    }
+
+    private fun moveToColorPicker() {
+        val intent = Intent(this, ColorPickerActivity::class.java)
+        startActivity(intent)
     }
 
     private fun observeViewModel() {
@@ -60,14 +69,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun updateAnimation(isFlashOn: Boolean) {
-        if (isFlashOn) {
-            binding.powerButtonAnimationView.startAnimation(powerButtonAlphaAnimation)
-        } else {
-            binding.powerButtonAnimationView.clearAnimation()
-            powerButtonAlphaAnimation.cancel()
-            powerButtonAlphaAnimation.reset()
-        }
+    private fun updateAnimation(isFlashOn: Boolean) = if (isFlashOn) {
+        binding.powerButtonAnimationView.startAnimation(powerButtonAlphaAnimation)
+    } else {
+        binding.powerButtonAnimationView.clearAnimation()
+        powerButtonAlphaAnimation.cancel()
+        powerButtonAlphaAnimation.reset()
     }
 
     private fun hasRequiredPermissions(): Boolean {

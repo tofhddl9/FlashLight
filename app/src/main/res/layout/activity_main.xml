@@ -5,20 +5,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#111111"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/power_button_animation_view"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.63"
+        app:layout_constraintVertical_bias="0.62"
         android:background="@drawable/circle_blue_gradient"
         android:visibility="gone"
-
         tools:visibility="visible"/>
 
     <ImageView
@@ -31,5 +31,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.618"
         android:background="@drawable/power" />
+
+    <ImageView
+        android:id="@+id/color_picker"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/rgb_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/power_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@
     package="com.lgtm.flashlight">
 
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <uses-feature android:name="android.hardware.camera.flash" />
 
@@ -23,6 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ColorPickerActivity"
+            android:theme="@style/Theme.FlashLight.Fullscreen"/>
     </application>
 
 </manifest>

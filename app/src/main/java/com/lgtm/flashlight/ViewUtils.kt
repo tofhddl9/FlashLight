@@ -9,3 +9,19 @@ fun View.setVisible(isVisible: Boolean) {
         View.GONE
     }
 }
+
+fun View.toggleVisibleGone() {
+    visibility = if (visibility == View.VISIBLE) {
+        View.GONE
+    } else {
+        View.VISIBLE
+    }
+}
+
+fun View.toggleVisibleInvisible() {
+    visibility = if (visibility == View.VISIBLE) {
+        View.INVISIBLE
+    } else {
+        View.VISIBLE
+    }
+}
