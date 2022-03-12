@@ -3,19 +3,18 @@
     package="com.lgtm.flashlight">
 
     <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <uses-feature android:name="android.hardware.camera.flash" />
 
     <application
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon_flashlight"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:label="@string/app_name"
             android:theme="@style/Theme.FlashLight.Fullscreen">
             <intent-filter>
@@ -26,6 +25,7 @@
         </activity>
 
         <activity android:name=".ColorPickerActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.FlashLight.Fullscreen"/>
     </application>
 
