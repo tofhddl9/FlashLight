@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/workstation/FlashLight/app/src/main/res/drawable/anim_alpah_repeat.xml" value="0.34375" />
+        <entry key="..\:/workstation/FlashLight/app/src/main/res/drawable/anim_circle_gradient.xml" value="0.12129629629629629" />
         <entry key="..\:/workstation/FlashLight/app/src/main/res/drawable/ic_launcher_background.xml" value="0.556923076923077" />
         <entry key="..\:/workstation/FlashLight/app/src/main/res/layout/activity_fullscreen.xml" value="0.18" />
         <entry key="..\:/workstation/FlashLight/app/src/main/res/layout/activity_main.xml" value="0.33" />
